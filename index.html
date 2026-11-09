@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="converter-card" aria-labelledby="converter-title">
+        <h1 id="converter-title">Temperature Converter</h1>
+        <p class="intro">
+          Enter a value, choose the units to convert from and to, then convert.
+        </p>
+
+        <form class="converter-form" novalidate>
+          <div class="field">
+            <label for="temperature">Temperature value</label>
+            <input
+              type="number"
+              id="temperature"
+              name="temperature"
+              step="any"
+              inputmode="decimal"
+              placeholder="e.g. 25"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="unit-fields">
+            <div class="field">
+              <label for="from-unit">Convert from</label>
+              <select id="from-unit" name="from-unit">
+                <option value="">Select unit…</option>
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+                <option value="kelvin">Kelvin (K)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="to-unit">Convert to</label>
+              <select id="to-unit" name="to-unit">
+                <option value="">Select unit…</option>
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+                <option value="kelvin">Kelvin (K)</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="button" id="convert-btn" class="convert-btn" disabled>
+            Convert
+          </button>
+        </form>
+
+        <div class="output" aria-live="polite">
+          <p id="result" class="result" hidden></p>
+          <p id="error" class="error" role="alert" hidden></p>
+        </div>
+      </section>
+    </main>
+    <script src="app.js" defer></script>
+  </body>
+</html>
